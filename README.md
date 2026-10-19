@@ -215,6 +215,12 @@ data/                  uploads and the history db (created at runtime)
 
 ## Frontend
 
+**A basic front end is included and works.** `src/jane/app.py`, launched by
+`start_jane_streamlit.bat` on `:8501`, is the original Streamlit UI: chat, uploads and
+sheets, the dashboard, the brief, the fixer, Prep — same engine, same six guards, and it
+depends on nothing private. It is the same backend the paid React UI drives; only the
+interface is held back.
+
 The React 19 + TypeScript + Tailwind v4 interface is deliberately **not** in this
 repository. It is the piece I am most protective of — the self-assembling data-factory
 landing page, the dashboard, the prep panel, the receipt under every answer — so it stays
@@ -222,6 +228,19 @@ private and is shared on request instead of published.
 
 Nothing here depends on it. The engine, the API, the six guards, the tests, the evals and
 the original Streamlit UI (`src/jane/app.py`) all run exactly as they did before.
+
+## License
+
+**Public to read, free to use for non-commercial work — commercial use needs a paid
+license.** See [LICENSE](LICENSE). Reading the code, running Jane on your own data,
+using it for a course or a portfolio piece, and changing it for any of that costs nothing
+and needs no permission. Using it inside a company's product or internal tooling, hosting
+it for other people, or shipping it in paid work needs a written commercial license
+first: **kumar.harshzzz04@gmail.com**.
+
+The licence covers the code and the docs in this repository. Ollama and the models it
+runs are somebody else's work and carry their own licences; the private React UI is not
+covered by this repository at all.
 
 ## Docs and history
 
