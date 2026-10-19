@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="Jane — local-first AI data analyst">
+  <title>Jane — local-first AI data analyst</title>
+
+  <defs>
+    <!-- the same warm ramp the app's mark and logotype use -->
+    <linearGradient id="jane-warm" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFD9B4"/>
+      <stop offset="50%" stop-color="#FF8A45"/>
+      <stop offset="100%" stop-color="#FF6B2C"/>
+    </linearGradient>
+
+    <!-- the faint bloom the closing screen sits on -->
+    <radialGradient id="jane-glow" cx="50%" cy="58%" r="55%">
+      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FF6B2C" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- the printed dot grid, at the density the app uses -->
+    <pattern id="jane-dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#EDF4EE" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" fill="#0B0C0E"/>
+  <rect width="1200" height="320" fill="url(#jane-dots)"/>
+  <ellipse cx="600" cy="196" rx="460" ry="132" fill="url(#jane-glow)"/>
+
+  <!-- the mark: a hexagon core with the answer rising inside it, 84px wide -->
+  <g transform="translate(558 46) scale(3.5)">
+    <path d="M12 1.9 20.7 7v10L12 22.1 3.3 17V7z"
+          fill="#FF6B2C" fill-opacity="0.09"
+          stroke="url(#jane-warm)" stroke-width="1.3" stroke-linejoin="round"/>
+    <g fill="url(#jane-warm)">
+      <rect x="7.6" y="13.4" width="2.05" height="4.2" rx="0.7"/>
+      <rect x="10.95" y="10.6" width="2.05" height="7" rx="0.7"/>
+      <rect x="14.3" y="7.6" width="2.05" height="10" rx="0.7"/>
+    </g>
+  </g>
+
+  <!-- the wordmark. Centred with text-anchor so the banner never depends on
+       a font's own metrics for its balance, and stacked to a system sans so it
+       still reads as the app's logotype on a machine without Plus Jakarta. -->
+  <text x="600" y="240" text-anchor="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+        font-size="112" font-weight="800" letter-spacing="-4.5"
+        fill="url(#jane-warm)">Jane</text>
+</svg>

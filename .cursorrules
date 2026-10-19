@@ -1,0 +1,10 @@
+# Cursor rules — see AGENTS.md (authoritative)
+
+- No vector RAG for numbers; schema injection + SQL/DuckDB only.
+- Charts are Vega-Lite JSON specs (the interchange format); rendering is matplotlib (`src/jane/charts.py`). The sandbox may also return matplotlib figures.
+- LLM code runs only in the sandbox subprocess (`src/jane/sandbox.py`).
+- Never execute LLM code in-process.
+- DuckDB connections open with `enable_external_access=false` — read-only SQL must not reach the filesystem.
+- Data stays local; only network hop is localhost -> Ollama.
+- Tests must run offline; mock OllamaClient.
+- Update PROJECT_LOG.md session log when done.

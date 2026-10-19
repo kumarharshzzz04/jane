@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jane"
+version = "0.1.0"
+description = "Local-first AI data analyst: DuckDB + Ollama, schema injection not RAG"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "duckdb>=0.9",
+    "streamlit>=1.30",
+    "openpyxl>=3.1",
+    "pyyaml>=6.0",
+    "pyxlsb>=1.0",
+    "odfpy>=1.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "httpx>=0.27"]   # httpx: starlette TestClient for server.py tests
+
+[project.scripts]
+jane = "jane.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The bundled sample datasets and the Streamlit backdrop are read at runtime
+# (src/jane/app.py, the bridge's /api/samples). Without this a non-editable
+# `pip install .` drops them, so a fresh install has an empty sample list and a
+# broken backdrop while an editable clone works — the two must not diverge.
+[tool.setuptools.package-data]
+jane = ["sample_data/*.csv", "assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,22 @@
+# Jane — local-first AI data analyst
+#
+# Env overrides: OLLAMA_HOST, ANALYST_MODEL, ANALYST_FALLBACK_MODEL,
+#   ANALYST_CODE_TIMEOUT, ANALYST_MAX_MEMORY_MB, ANALYST_MAX_ATTEMPTS, ...
+
+ollama:
+  host: "http://127.0.0.1:11434"
+  primary_model: "qwen2.5-coder:7b"    # ~5GB VRAM @ Q4, 12/12 on eval, best first-try rate
+  fallback_model: "llama3:8b"          # ~5GB VRAM @ Q4, 12/12 on eval with retries
+  request_timeout: 240
+
+sandbox:
+  code_timeout: 30
+  max_memory_mb: 4096
+  max_output_mb: 10
+
+agent:
+  max_attempts: 5
+
+limits:
+  max_upload_mb: 200
+  max_history_messages: 12

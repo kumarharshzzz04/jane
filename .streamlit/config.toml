@@ -1,0 +1,14 @@
+[theme]
+base = "dark"
+# — Receipts & rules — flat lab-notebook skin. Deep canopy ink with a dot
+# grid; signal orange for actions, verdigris for verified; hairline rules.
+primaryColor = "#FF6B2C"               # signal — interactive elements
+backgroundColor = "#0C1512"            # canopy ink
+secondaryBackgroundColor = "#12211A"   # flat panel
+textColor = "#EDF4EE"                  # bone
+
+[server]
+port = 8501
+
+[browser]
+gatherUsageStats = false
